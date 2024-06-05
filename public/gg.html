@@ -1,0 +1,31 @@
+<fieldset>
+    <div>
+        <p>Temps estimé: <span id="temps_estime"></span></p>
+        <p>Coût estimé: <span id="cout_estime"></span></p>
+    </div>
+    
+    <!-- Inclusion de jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Script JavaScript -->
+    <script>
+        $(document).ready(function () {
+            $('#monFormulaire').on('submit', function (e) {
+                e.preventDefault();
+    
+                $.ajax({
+                    type: "POST",
+                    url: "/calculer-temps-et-cout",
+                    data: $('#monFormulaire').serialize(),
+                    success: function (response) {
+                        $('#temps_estime').text(response.temps + ' heures');
+                        $('#cout_estime').text(response.cout + ' €');
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+</fieldset>

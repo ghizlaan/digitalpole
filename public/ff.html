@@ -1,0 +1,776 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- Site Metas -->
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+    
+        <title>projet de stage</title>
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    
+      <!-- fonts style -->
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+      <!--owl slider stylesheet -->
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    
+      <!-- font awesome style -->
+      <link href="css/font-awesome.min.css" rel="stylesheet" />
+    
+      <!-- Custom styles for this template -->
+      <link href="css/style.css" rel="stylesheet" />
+      <!-- responsive style -->
+      <link href="css/responsive.css" rel="stylesheet" />
+    
+        <style>* {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            height: 100%;
+        }
+        
+        /*Background color*/
+        #grad1 {
+            background-color: : red;
+            background-image: linear-gradient(50deg, rgb(242, 240, 238) , rgb(242, 240, 238));
+            height: 100%;
+        }
+        
+        /*form styles*/
+        #msform {
+            text-align: center;
+            position: relative;
+            margin-top: 20px;
+         
+        }
+        
+        #msform fieldset .form-card {
+            background: rgb(226, 224, 216);
+            border: 0 none;
+            border-radius: 0px;
+            box-shadow: 0 2px 2px 2px rgba(236, 105, 17, 0.2);
+            padding: 20px 40px 30px 40px;
+            box-sizing: border-box;
+            width: 94%;
+            margin: 0 3% 20px 3%;
+        
+            /*stacking fieldsets above each other*/
+            position: relative;
+        }
+        
+        #msform fieldset {
+            background: white;
+            border: 0 none;
+            border-radius: 0.5rem;
+            box-sizing: border-box;
+            width: 100%;
+            
+            margin: 0;
+            padding-bottom: 20px;
+        
+            /*stacking fieldsets above each other*/
+            position: relative;
+        }
+        
+        /*Hide all except first fieldset*/
+        #msform fieldset:not(:first-of-type) {
+            display: none;
+        }
+        
+        #msform fieldset .form-card {
+            text-align: left;
+            color: #9E9E9E;
+        }
+        
+        #msform input, #msform textarea {
+            padding: 0px 8px 4px 8px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0px;
+            margin-bottom: 25px;
+            margin-top: 2px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: montserrat;
+            color: #2C3E50;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+        
+        #msform input:focus, #msform textarea:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            border: none;
+            font-weight: bold;
+            border-bottom: 2px solid skyblue;
+            outline-width: 0;
+        }
+        
+        /*Blue Buttons*/
+        #msform .action-button {
+            width: 100px;
+            background: rgb(135, 213, 235);
+            font-weight: bold;
+            color: white;
+            border: 0 none;
+            border-radius: 0px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+        }
+        
+        #msform .action-button:hover, #msform .action-button:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px skyblue;
+        }
+        
+        /*Previous Buttons*/
+        #msform .action-button-previous {
+            width: 100px;
+            background: #616161;
+            font-weight: bold;
+            color: white;
+            border: 0 none;
+            border-radius: 0px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+        }
+        
+        #msform .action-button-previous:hover, #msform .action-button-previous:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #616161;
+        }
+        
+        /*Dropdown List Exp Date*/
+        select.list-dt {
+            border: none;
+            outline: 0;
+            border-bottom: 1px solid #ccc;
+            padding: 2px 5px 3px 5px;
+            margin: 2px;
+        }
+        
+        select.list-dt:focus {
+            border-bottom: 2px solid skyblue;
+        }
+        
+        /*The background card*/
+        .card {
+            z-index: 0;
+            border: none;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+        
+        /*FieldSet headings*/
+        .fs-title {
+            font-size: 25px;
+            color: #2C3E50;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: left;
+        }
+        
+        /*progressbar*/
+        #progressbar {
+            margin-bottom: 30px;
+            overflow: hidden;
+            color: lightgrey;
+        }
+        
+        #progressbar .active {
+            color: #000000;
+        }
+        
+        #progressbar li {
+            list-style-type: none;
+        font-size: 12px;
+        width: calc(100% / 7); /* Réglez le nombre total d'étapes */
+        float: left;
+        position: relative;
+        }
+        
+        /*Icons in the ProgressBar*/
+        #progressbar #account:before {
+            font-family: FontAwesome;
+            content: "\f023";
+        }
+        
+        #progressbar #personal:before {
+            font-family: FontAwesome;
+            content: "\f007";
+        }
+        
+        #progressbar #payment:before {
+            font-family: FontAwesome;
+            content: "\f09d";
+        }
+        
+        #progressbar #confirm:before {
+            font-family: FontAwesome;
+            content: "\f00c";
+        }
+        
+        /*ProgressBar before any progress*/
+        #progressbar li:before {
+            width: 50px;
+            height: 50px;
+            line-height: 45px;
+            display: block;
+            font-size: 18px;
+            color: #ffffff;
+            background: lightgray;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            padding: 2px;
+        }
+        
+        /*ProgressBar connectors*/
+        #progressbar li:after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: lightgray;
+            position: absolute;
+            left: 0;
+            top: 25px;
+            z-index: -1;
+        }
+        
+        /*Color number of the step and the connector before it*/
+        #progressbar li.active:before, #progressbar li.active:after {
+            background: skyblue;
+        }
+        
+        /*Imaged Radio Buttons*/
+        .radio-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .radio {
+            display:inline-block;
+            width: 204;
+            height: 104;
+            border-radius: 0;
+            background: lightblue;
+            box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            cursor:pointer;
+            margin: 8px 2px; 
+        }
+        
+        .radio:hover {
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .radio.selected {
+            box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+    
+        /* Styles de base pour toutes les étapes */
+        #progressbar li {
+        list-style-type: none;
+        font-size: 12px;
+        width: calc(100% / 7); /* Réglez le nombre total d'étapes */
+        float: left;
+        position: relative;
+        text-align: center;
+        color: #777; /* Couleur du texte par défaut */
+        } 
+    
+        /* Styles pour les étapes actives */
+        #progressbar li.active {
+         color: #33bfc9; /* Couleur du texte des étapes actives */
+        }
+    
+        /* Styles pour les étapes complétées */
+        #progressbar li.done {
+        color: rgb(135, 21, 9); /* Couleur du texte des étapes complétées */
+        }
+    
+        /*Fit image in bootstrap div*/
+        .fit-image{
+            width: 100%;
+            object-fit: cover;
+        }</style>
+    </head>
+    
+    <body>
+    
+        <div class="hero_area">
+            <!-- header section strats -->
+            <header class="header_section">
+                <div class="header_top">
+                    <div class="container-fluid header_top_container">
+                    <div class="lang_box dropdown">
+                    <a href="#" title="Language" class="nav-link" data-toggle="dropdown" aria-expanded="true">
+                                <img src="images/flag-france.png" alt="flag" class=" " title="france"> <i class=" " aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu ">
+                        <a href="#" class="dropdown-item">
+                        <img src="images/flag-france.png" class="" alt="flag">
+                        </a>
+                    </div>
+                    <span>
+                        Français
+                    </span>
+                  </div>
+                  <div class="contact_nav">
+                    <a href="">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                      <span>
+                        téléphone : +(33)0189 480 123
+                      </span>
+                    </a>
+                    <a href="https://www.google.com/intl/fr/gmail/about/">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                      <span>
+                        Email : CONTACT@DIGITALPOLE.FR
+                      </span>
+                    </a>
+                    <a href="https://www.google.com/maps/place/23+Rue+du+D%C3%A9part,+75014+Paris,+France/@48.8424255,2.3231097,19.04z/data=!4m6!3m5!1s0x47e671cc7cea12d3:0xa18549261354a602!8m2!3d48.842216!4d2.3235124!16s%2Fg%2F11b8v4bv_y?entry=ttu">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                      <span>
+                        localisation : 23 RUE DU DEPART 75014 PARIS 
+                      </span>
+                    </a>
+                  </div>
+                  <div class="social_box">
+                    <a href="https://web.facebook.com/Digitalpole/?_rdc=1&_rdr">
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://twitter.com/Digitalpole_UX">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/digitalpole/?originalSubdomain=fr">
+                      <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/digitalpole_ux/">
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="header_bottom">
+                <div class="container-fluid">
+                  <nav class="navbar navbar-expand-lg custom_nav-container ">
+                    <a class="navbar-brand" href="index.html">
+                      <img src="images/logo.png" alt="">
+                    </a>
+                    </a>
+          
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class=""> </span>
+                    </button>
+          
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav  ">
+                        <li class="nav-item ">
+                          <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="service">Services</a>
+                        </li>
+                        <li class="nav-item ">
+                          <a class="nav-link" href="about"> A propos</a>
+                        </li>
+                        <li class="nav-item active">
+                          <a class="nav-link" href="projet">Estimez votre projet</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="equipe">equipe</a>
+                        </li>
+                        <li class="nav-item ">
+                          <a class="nav-link" href="contact">Contact </a>
+                        </li>
+                        
+                        
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </header>
+            <!-- end header section -->
+          
+        <div class="container-fluid" id="grad1">
+            <div class="row justify-content-center mt-0">
+                <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+                    <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                        <h2><strong>Information sur le projet</strong></h2>
+                      
+                        <div class="row">
+                            <div class="col-md-12 mx-0">
+                                <form id="msform" action="{{ route('projet.store') }}" method="post">
+                                    @csrf
+                                    <!-- progressbar -->
+                                    <ul id="progressbar">
+                                        <li class="active step1"><strong>Étape 1</strong></li>
+                                        <li class="step2"><strong>Étape 2</strong></li>
+                                        <li class="step3"><strong>Étape 3</strong></li>
+                                        <li class="step4"><strong>Étape 4</strong></li>
+                                        <li class="step5"><strong>Étape 5</strong></li>
+                                        <li class="step6"><strong>Étape 6</strong></li>
+                                        <li class="step7"><strong>Étape 7</strong></li>
+                                        
+                            
+                                </ul>
+                            <form id="estimationForm" method="POST" action="{{ route('calculate.estimation') }}">
+                                <!-- fieldsets -->
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h5>Nom de projet</h5>
+                                        <input type="text" name="nom" placeholder="nom de projet" value=" {{ $project->nom }}" />
+                                    </div>
+                                    <input type="button" name="next" class="next action-button" value="suivant" />
+                                </fieldset>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h5>Type de projet      </h5>
+                                        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="type_projet" id="type_projet1" value="Site Web Vitrine" {{ $project->type_projet == 'Site Web Vitrine' ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="type_projet1">
+                                                Site Web Vitrine
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="type_projet" id="type_projet2" value="Application Web" {{ $project->type_projet == 'Application Web' ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="type_projet2">
+                                                Application Web
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="type_projet" id="type_projet3" value="E-commerce" {{ $project->type_projet == 'E-commerce' ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="type_projet3">
+                                                E-commerce
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <input type="button" name="previous" class="previous action-button-previous" value="précédent" />
+                                    <input type="button" name="next" class="next action-button" value="suivant" />
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h5>Dans quelles langues le contenu du projet doit-il être disponible ? Si plusieurs langues sont nécessaires, veuillez les spécifier:</h5>
+                                       <div> <input class="form-check-input" type="checkbox" name="description[]" value="Francais"{{ in_array('Francais', json_decode($project->description)) ? 'checked' : '' }}><label class="form-check-label" for="budget-vitrine"> Français</label></div>
+                                       <div><input class="form-check-input" type="checkbox" name="description[]" value="Anglais"{{ in_array('Anglais', json_decode($project->description)) ? 'checked' : '' }}><label class="form-check-label" for="budget-vitrine">Anglais</label></div>
+                                        <div><input class="form-check-input" type="checkbox" name="description[]" value="Espagnol"{{ in_array('Espagnol', json_decode($project->description)) ? 'checked' : '' }}><label class="form-check-label" for="budget-vitrine">Espagnol</label></div>
+                                        <div><input class="form-check-input" type="checkbox" name="description[]" value="Autre"{{ in_array('Autre', json_decode($project->description)) ? 'checked' : '' }}><label class="form-check-label" for="budget-vitrine">Autre</label></div>
+                                    </div>
+                                    <input type="button" name="previous" class="previous action-button-previous" value="précédent" />
+                                    <input type="button" name="next" class="next action-button" value="suivant" />
+                                </fieldset>
+                                
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h5>Y a-t-il des technologies spécifiques à prendre en compte ?</h5>
+                                        <input class="form-check-input" type="radio" id="contraintes-oui-radio" name="technologies" value="oui" {{ $project->technologies == 'oui' ? 'checked' : '' }}>
+                                        <label for="contraintes-oui-radio" id="contraintes-oui-label">Oui</label><br>
+                                        <input class="form-check-input" type="radio" id="contraintes-non-radio" name="technologies" value="non" {{ $project->technologies == 'non' ? 'checked' : '' }}>
+                                        <label for="contraintes-non-radio" id="contraintes-non-label">Non</label><br>
+                                        
+                                        <div id="budget-question" style="display: none; width: 100%;">
+                                            <label for="budget"><h5>Voici quelques exemples de technologies</h5></label><br>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="technologies-specific" value="PHP" {{ $project->technologies == 'PHP' ? 'checked' : '' }}>
+                                                <label class="form-check-label" for="tech-php">
+                                                    PHP
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="technologies-specific" value="Python" {{ $project->technologies == 'Python' ? 'checked' : '' }}>
+                                                <label class="form-check-label" for="tech-python">
+                                                    Python
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="technologies-specific" value="Java" {{ $project->technologies == 'Java' ? 'checked' : '' }}>
+                                                <label class="form-check-label" for="tech-java">
+                                                    Java
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="technologies-specific" value="Html / css / javaScript" {{ $project->technologies == 'C / C++' ? 'checked' : '' }}>
+                                                <label class="form-check-label" for="tech-html-css-js">
+                                                    C / C++                                               
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                const contraintesOuiRadio = document.getElementById('contraintes-oui-radio');
+                                                const contraintesNonRadio = document.getElementById('contraintes-non-radio');
+                                                const budgetQuestion = document.getElementById('budget-question');
+                                                
+                                                // Function to toggle visibility based on initial state
+                                                function toggleBudgetQuestion() {
+                                                    budgetQuestion.style.display = contraintesOuiRadio.checked ? 'block' : 'none';
+                                                }
+                                                
+                                                // Add event listeners
+                                                contraintesOuiRadio.addEventListener('change', toggleBudgetQuestion);
+                                                contraintesNonRadio.addEventListener('change', toggleBudgetQuestion);
+                                                
+                                                // Initial visibility check
+                                                toggleBudgetQuestion();
+                                            });
+                                        </script>
+                                    </div>
+                                    <input type="button" name="previous" class="previous action-button-previous" value="précédent" />
+                                    <input type="button" name="next" class="next action-button" value="suivant" />
+                                </fieldset>
+                                
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h5>Quel style de design préférez-vous pour votre site web</h5>
+                                    
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="design_preference" id="design_preference" value="simple"{{ $project->design_preference == 'simple' ? 'checked' : '' }} >
+                                            <label class="form-check-label" for="exampleRadios1">
+                                                Simple
+                                            </label>
+                                        </div>
+                                    
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="design_preference" id="design_preference" value="Moderne" {{ $project->design_preference == 'Moderne' ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Moderne
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="design_preference" id="design_preference" value="Classique" {{ $project->design_preference == 'Classique' ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Classique 
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <input type="button" name="previous" class="previous action-button-previous" value="précédent" />
+                                    <input type="button" name="next" class="next action-button" value="suivant" />
+                                </fieldset>
+                                
+
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h5>Combien de pages comporte votre site internet ?</h5>
+                                        <div class="checkbox-list">
+                                            <label><input type="checkbox" name="pages[]" value="accueil"{{ in_array('accueil', json_decode($project->pages)) ? 'checked' : '' }}><span>Accueil</span></label>                                           
+                                             <label><input type="checkbox" name="pages[]" value="page-editoriale"{{ $project->pages == 'Page éditoriale' ? 'checked' : '' }}><span>Page éditoriale</span></label>
+                                            <label><input type="checkbox" name="pages[]" value="nos-services"{{ in_array('nos-services', json_decode($project->pages)) ? 'checked' : '' }}><span>nos-services</span></label>                                            <label><input type="checkbox" name="pages[]" value="realisations"{{ $project->pages == 'realisations' ? 'checked' : '' }}><span>Réalisations</span></label>
+                                            <label><input type="checkbox" name="pages[]" value="actualites"{{ in_array('actualites', json_decode($project->pages)) ? 'checked' : '' }}><span>Actualités</span></label>
+                                            <label><input type="checkbox" name="pages[]" value="evenements"{{ in_array('evenements', json_decode($project->pages)) ? 'checked' : '' }}><span>Événements</span></label>
+                                            <label><input type="checkbox" name="pages[]" value="offres-emploi"{{ in_array('offres-emploi', json_decode($project->pages)) ? 'checked' : '' }}><span>Offres d'emploi</span></label>
+                                            <label><input type="checkbox" name="pages[]" value="contact"{{ in_array('contact', json_decode($project->pages)) ? 'checked' : '' }}><span>Contact</span></label>
+                                        </div>
+                                        <label for="additional_pages"><h5>Si la liste ci-dessus ne couvre pas toutes les pages que vous avez en tête, indiquez le nombre de pages supplémentaires :</h5></label>
+                                        <input type="number" name="additional_pages" id="additional_pages" min="0" value="{{ $project->additional_pages }}" >
+                                    </div>
+                                    <input type="button" name="previous" class="previous action-button-previous" value="précédent" />
+                                    <input type="button" name="next" class="next action-button" value="suivant" />
+                                </fieldset>
+                                
+                                <fieldset>
+
+                                    <pre>{{ print_r($client, true) }}</pre> <!-- Utilisation de print_r avec true pour afficher les données du client -->
+
+                                    <form action="{{ route('afficher.estimation') }}" method="POST">
+
+                                        @csrf
+                                        <div class="form-card">
+                                            <label for="nomc">Nom :</label>
+                                            <input type="text" id="nomc" name="nomc" value="{{ $client->nomc ?? '' }}" required>
+                                            
+                                            <label for="prenomc">Prénom :</label>
+                                            <input type="text" id="prenomc" name="prenomc" value="{{ $client->prenomc ?? '' }}" required>
+                                            
+                                            <label for="emailc">Email :</label>
+                                            <input type="email" id="emailc" name="emailc" value="{{ $client->emailc ?? '' }}" required>
+                                            
+                                            <label for="phonec">Téléphone :</label>
+                                            <input type="tel" id="phonec" name="phonec" value="{{ $client->phonec ?? '' }}" required>
+                                        </div>
+                                        
+                                        <input type="hidden" name="projet_id" value="{{ $project->id }}">
+                                        <input type="button" name="previous" class="previous action-button-previous" value="Précédent">
+                                        <button type="submit" class="next action-button">Modifier</button>
+                                    </form>
+                                </fieldset>
+                                
+                                </form>
+                                <script>
+                                    document.getElementById('estimationForm').addEventListener('submit', function(event) {
+                                        event.preventDefault();
+                                        
+                                        const formData = new FormData(this);
+                                        const data = Object.fromEntries(formData.entries());
+                                        data.technologies = formData.getAll('technologies[]');
+                                
+                                        fetch('/calculate-estimation', {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                                            },
+                                            body: JSON.stringify(data)
+                                        })
+                                        .then(response => response.json())
+                                        .then(result => {
+                                            // Rediriger vers la page d'estimation avec les résultats calculés
+                                            window.location.href = '/estimation?temps=' + result.temps + '&cout=' + result.cout;
+                                        })
+                                        .catch(error => console.error('Error:', error));
+                                    });
+                                </script>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var current_fs, next_fs, previous_fs; //fieldsets
+            var opacity;
+
+            $(".next").click(function(){
+                current_fs = $(this).parent();
+                next_fs = $(this).parent().next();
+                //Add Class Active
+                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+                //show the next fieldset
+                next_fs.show(); 
+                //hide the current fieldset with style
+                current_fs.animate({opacity: 0}, {
+                    step: function(now) {
+                        // for making fielset appear animation
+                        opacity = 1 - now;
+                        current_fs.css({
+                            'display': 'none',
+                            'position': 'relative'
+                        });
+                        next_fs.css({'opacity': opacity});
+                    }, 
+                    duration: 600
+                });
+            });
+
+            $(".previous").click(function(){
+                current_fs = $(this).parent();
+                previous_fs = $(this).parent().prev();
+                //Remove class active
+                $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+                //show the previous fieldset
+                previous_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({opacity: 0}, {
+                    step: function(now) {
+                        // for making fielset appear animation
+                        opacity = 1 - now;
+                        current_fs.css({
+                            'display': 'none',
+                            'position': 'relative'
+                        });
+                        previous_fs.css({'opacity': opacity});
+                    }, 
+                    duration: 600
+                });
+            });
+            $('.radio-group .radio').click(function(){
+                $(this).parent().find('.radio').removeClass('selected');
+                $(this).addClass('selected');
+            });
+
+            $(".submit").click(function(){
+                return false;
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+<fieldset>
+    <div class="form-card"> 
+        <h5>Y a-t-il des technologies spécifiques a prendre en compte ?</h5>
+        <input  class="form-check-input" type="radio" id="contraintes-oui-radio" name="technologies" value="oui">
+        <label for="contraintes-oui-radio" id="contraintes-oui-label">Oui</label><br>
+        <input class="form-check-input" type="radio" id="contraintes-non-radio" name="technologies" value="non">
+        <label for="contraintes-non-radio" id="contraintes-non-label">Non</label><br>
+        <div id="budget-question" style="display: none; width: 100%;">
+            <label for="budget"><h5>Voici quelques exemples de technologies</h5></label><br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="technologies-specific" value="PHP" {{ $project->technologies == 'PHP' ? 'checked' : '' }}>
+                <label class="form-check-label" for="tech-php">
+                    PHP
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="technologies-specific" value="Python" {{ $project->technologies == 'Python' ? 'checked' : '' }}>
+                <label class="form-check-label" for="tech-python">
+                    Python
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="technologies-specific" value="Java" {{ $project->technologies == 'Java' ? 'checked' : '' }}>
+                <label class="form-check-label" for="tech-java">
+                    Java
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="technologies-specific" value="Html / css / javaScript" {{ $project->technologies == 'C / C++' ? 'checked' : '' }}>
+                <label class="form-check-label" for="tech-html-css-js">
+                    C / C++                                               
+                </label>
+            </div>
+        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const contraintesOuiRadio = document.getElementById('contraintes-oui-radio');
+                const contraintesNonRadio = document.getElementById('contraintes-non-radio');
+                const budgetQuestion = document.getElementById('budget-question');
+                
+                // Function to toggle visibility based on initial state
+                function toggleBudgetQuestion() {
+                    budgetQuestion.style.display = contraintesOuiRadio.checked ? 'block' : 'none';
+                }
+                
+                // Add event listeners
+                contraintesOuiRadio.addEventListener('change', toggleBudgetQuestion);
+                contraintesNonRadio.addEventListener('change', toggleBudgetQuestion);
+                
+                // Initial visibility check
+                toggleBudgetQuestion();
+            });
+        </script>
+    </div>
+    <input type="button" name="previous" class="previous action-button-previous" value="précédent" />
+    <input type="button" name="next" class="next action-button" value="suivant" />
+</fieldset>
